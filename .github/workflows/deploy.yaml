@@ -13,15 +13,15 @@ jobs:
       - run: docker build -t react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true react-test npm test
 
-      - run: docker build -t multiapp-client ./client
-      - run: docker build -t multiapp-nginx ./nginx
-      - run: docker build -t multiapp-server ./server
-      - run: docker build -t multiapp-worker ./worker
+      - run: docker build -t aaroncerceda/multiapp-client ./client
+      - run: docker build -t aaroncerceda/multiapp-nginx ./nginx
+      - run: docker build -t aaroncerceda/multiapp-server ./server
+      - run: docker build -t aaroncerceda/multiapp-worker ./worker
 
-      - run: docker push multiapp-client
-      - run: docker push multiapp-nginx
-      - run: docker push multiapp-server
-      - run: docker push multiapp-worker
+      - run: docker push aaroncerceda/multiapp-client
+      - run: docker push aaroncerceda/multiapp-nginx
+      - run: docker push aaroncerceda/multiapp-server
+      - run: docker push aaroncerceda/multiapp-worker
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
