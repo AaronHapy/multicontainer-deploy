@@ -31,9 +31,9 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: changeRandom
-          environment_name: changeRandom
-          existing_bucket_name: changeRandom
-          region: changeRandom
+          application_name: multi-docker
+          environment_name: Multi-docker-env
+          existing_bucket_name: elasticbeanstalk-us-west-2-905418000507
+          region: us-west-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
